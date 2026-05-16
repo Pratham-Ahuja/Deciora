@@ -137,9 +137,9 @@ def render_feedback():
 """, unsafe_allow_html=True)
 
         contacts = [
-            ("📧", "Email",    "support@deciora.ai"),
-            ("🐦", "Twitter",  "@DecioraAI"),
-            ("💼", "LinkedIn", "Deciora"),
+            ("📧", "Email",    "prathamahuja924@gmail.com"),
+            ("🐦", "Twitter",  "Coming SOON"),
+            ("💼", "LinkedIn", "COMING  SOON"),
         ]
         for icon, label, val in contacts:
             st.markdown(f"""
