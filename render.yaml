@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: deciora
+    env: python
+    region: oregon
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: APP_SECRET_KEY
+        generateValue: true
+      - key: SUPABASE_STORAGE_BUCKET
+        value: deciora-files
+      - key: MAX_FILE_SIZE_MB
+        value: "50"
+      - key: APP_ENV
+        value: production
+    autoDeploy: true
